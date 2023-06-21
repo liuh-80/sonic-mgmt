@@ -187,7 +187,7 @@ def setup_ptf_lag(ptfhost, ptf_ports):
     time.sleep(10)
 
 
-def generate_port_config(duthost, tbinfo):
+def generate_port_config(duthost, tbinfo, most_common_port_speed):
     """
     Setup dut and ptf based on ports available in dut vlan
 
@@ -334,7 +334,7 @@ def ptf_dut_setup_and_teardown(duthost, ptfhost, tbinfo, most_common_port_speed)
         ptfhost: PTF host object
         tbinfo: fixture provides information about testbed
     """
-    dut_ports, ptf_ports, src_vlan_id, vlan = generate_port_config(duthost, tbinfo)
+    dut_ports, ptf_ports, src_vlan_id, vlan = generate_port_config(duthost, tbinfo, most_common_port_speed)
     try:
         setup_dut_lag(duthost, dut_ports, vlan, src_vlan_id)
         setup_ptf_lag(ptfhost, ptf_ports)
@@ -386,6 +386,10 @@ def test_lag_member_status(duthost, most_common_port_speed, ptf_dut_setup_and_te
                   "get port status error")
     for _, status in list(port_channel_status["ports"].items()):
         pytest_assert(status["runner"]["selected"], "status of lag member error")
+        if "partner_retry_count" in status["runner"]:
+            pytest_assert(status["runner"]["partner_retry_count"] == 3,
+                          "partner retry count is incorrect; expected 3, but is {}"
+                          .format(status["runner"]["partner_retry_count"]))
 
 
 def run_lag_member_traffic_test(duthost, dut_vlan, ptf_ports, ptfhost):
@@ -399,7 +403,7 @@ def run_lag_member_traffic_test(duthost, dut_vlan, ptf_ports, ptfhost):
         ptfhost: PTF host object
     """
     ptf_lag = {
-        "port_list": ptf_ports[ATTR_PORT_BEHIND_LAG].values(),
+        "port_list": list(ptf_ports[ATTR_PORT_BEHIND_LAG].values()),
         "ip": ptf_ports["ip"]["lag"]
     }
     ptf_not_lag = ptf_ports[ATTR_PORT_NOT_BEHIND_LAG]
