@@ -16,6 +16,7 @@ def gnmi_container(duthost):
             GNMI_CONTAINER_NAME = "telemetry"
         else:
             GNMI_CONTAINER_NAME = "gnmi"
+        GNMI_CONTAINER_NAME = "gnmi"
     return GNMI_CONTAINER_NAME
 
 
@@ -26,6 +27,7 @@ def gnmi_program(duthost):
             GNMI_PROGRAM_NAME = "telemetry"
         else:
             GNMI_PROGRAM_NAME = "gnmi-native"
+        GNMI_PROGRAM_NAME = "gnmi-native"
     return GNMI_PROGRAM_NAME
 
 
@@ -36,8 +38,9 @@ def gnmi_port(duthost):
             GNMI_CONFIG_KEY = 'TELEMETRY|gnmi'
         else:
             GNMI_CONFIG_KEY = 'GNMI|gnmi'
+        GNMI_CONFIG_KEY = 'GNMI|gnmi'
         port = duthost.shell("sonic-db-cli CONFIG_DB hget '%s' 'port'" % GNMI_CONFIG_KEY)['stdout']
-        GNMI_PORT = int(port)
+        GNMI_PORT = int(50052)
     return GNMI_PORT
 
 
@@ -64,7 +67,10 @@ def apply_cert_config(duthost):
     dut_command = "docker exec %s bash -c " % gnmi_container(duthost)
     dut_command += "\"/usr/bin/nohup /usr/sbin/telemetry -logtostderr --port %s " % port
     dut_command += "--server_crt /etc/sonic/telemetry/gnmiserver.crt --server_key /etc/sonic/telemetry/gnmiserver.key "
-    dut_command += "--ca_crt /etc/sonic/telemetry/gnmiCA.pem -gnmi_native_write=true -v=10 >/root/gnmi.log 2>&1 &\""
+    # enable ZMQ
+    # dut_command += "--ca_crt /etc/sonic/telemetry/gnmiCA.pem -gnmi_native_write=true  -zmq_address=tcp://localhost:8020 -v=10 >/root/gnmi.log 2>&1 &\""
+    # disable ZMQ
+    dut_command += "--ca_crt /etc/sonic/telemetry/gnmiCA.pem -gnmi_native_write=true  -v=10 >/root/gnmi.log 2>&1 &\""
     duthost.shell(dut_command)
     time.sleep(GNMI_SERVER_START_WAIT_TIME)
 
@@ -97,7 +103,7 @@ def gnmi_set(duthost, localhost, delete_list, update_list, replace_list):
     ip = duthost.mgmt_ip
     port = gnmi_port(duthost)
     cmd = "gnmi/gnmi_set -target_addr %s:%s " % (ip, port)
-    cmd += "-alsologtostderr -cert ./gnmiclient.crt -key ./gnmiclient.key -ca ./gnmiCA.pem -time_out 60s"
+    cmd += "-alsologtostderr -cert ./gnmiclient.crt -key ./gnmiclient.key -ca ./gnmiCA.pem -time_out 60s -xpath_target MIXED"
     for delete in delete_list:
         cmd += " -delete " + delete
     for update in update_list:

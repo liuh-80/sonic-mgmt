@@ -7,8 +7,9 @@ import pytest
 
 
 from .test_authorization import ssh_connect_remote, ssh_run_command, \
-        per_command_check_skip_versions, remove_all_tacacs_server
-from .utils import stop_tacacs_server, start_tacacs_server, check_server_received
+        remove_all_tacacs_server
+from .utils import stop_tacacs_server, start_tacacs_server, \
+        check_server_received, per_command_accounting_skip_versions
 from tests.common.errors import RunAnsibleModuleFail
 from tests.common.helpers.assertions import pytest_assert
 from tests.common.utilities import skip_release
@@ -63,6 +64,10 @@ def check_tacacs_server_log_exist(ptfhost, tacacs_creds, command):
             Find logs match following format: "tacacs_rw_user ... cmd=command"
             Print matched logs with /P command.
     """
+    # show all log
+    res = ptfhost.command("cat /var/log/tac_plus.acct")
+    logger.warning(res["stdout_lines"])
+
     log_pattern = "/	{0}	.*	cmd=.*{1}/P".format(username, command)
     logs = wait_for_log(ptfhost, "/var/log/tac_plus.acct", log_pattern)
     pytest_assert(len(logs) > 0)
@@ -141,7 +146,7 @@ def check_image_version(duthost):
     Returns:
         None.
     """
-    skip_release(duthost, per_command_check_skip_versions)
+    skip_release(duthost, per_command_accounting_skip_versions)
 
 
 def test_accounting_tacacs_only(

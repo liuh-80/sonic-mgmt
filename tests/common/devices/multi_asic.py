@@ -80,10 +80,14 @@ class MultiAsicSonicHost(object):
                     logger.warning("Removing teamd from default services for switch_type DPU")
                     self.sonichost.DEFAULT_ASIC_SERVICES.remove(service)
                     continue
-                if config_facts['FEATURE'][service]['has_per_asic_scope'] == "False":
-                    self.sonichost.DEFAULT_ASIC_SERVICES.remove(service)
-                if config_facts['FEATURE'][service]['state'] == "disabled":
-                    self.sonichost.DEFAULT_ASIC_SERVICES.remove(service)
+                try:
+                    if config_facts['FEATURE'][service]['has_per_asic_scope'] == "False":
+                        self.sonichost.DEFAULT_ASIC_SERVICES.remove(service)
+                    if config_facts['FEATURE'][service]['state'] == "disabled":
+                        self.sonichost.DEFAULT_ASIC_SERVICES.remove(service)
+                except KeyError:
+                    logger.warning("Key {} not found in config_tacts".format(service))
+                    
         for asic in active_asics:
             service_list += asic.get_critical_services()
         self.sonichost.reset_critical_services_tracking_list(service_list)

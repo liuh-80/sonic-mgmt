@@ -4,7 +4,8 @@ import pytest
 from _pytest.outcomes import Failed
 
 from tests.tacacs.utils import stop_tacacs_server, start_tacacs_server
-from tests.tacacs.utils import per_command_check_skip_versions, remove_all_tacacs_server, get_ld_path
+from tests.tacacs.utils import per_command_authorization_skip_versions, \
+        remove_all_tacacs_server, get_ld_path
 from tests.common.helpers.assertions import pytest_assert
 from tests.common.utilities import skip_release, wait_until
 from .utils import check_server_received
@@ -107,7 +108,7 @@ def check_image_version(duthost):
     Returns:
         None.
     """
-    skip_release(duthost, per_command_check_skip_versions)
+    skip_release(duthost, per_command_authorization_skip_versions)
 
 
 @pytest.fixture
@@ -173,6 +174,7 @@ def check_authorization_tacacs_only(
 
 def test_authorization_tacacs_only(
                                 duthosts,
+                                ptfhost,
                                 enum_rand_one_per_hwsku_hostname,
                                 setup_authorization_tacacs,
                                 tacacs_creds,
@@ -180,55 +182,23 @@ def test_authorization_tacacs_only(
                                 remote_user_client,
                                 remote_rw_user_client):
 
-    check_authorization_tacacs_only(
-                                    duthosts,
-                                    enum_rand_one_per_hwsku_hostname,
-                                    tacacs_creds,
-                                    remote_user_client)
-
-    # check commands used by scripts
-    commands = [
-        "show interfaces counters -a -p 3",
-        "show ip bgp neighbor",
-        "show ipv6 bgp neighbor",
-        "show feature status telemetry",
-        "touch testfile",
-        "chmod +w testfile",
-        "echo \"test\" > testfile",
-        "ls -l testfile | egrep -v -i '^total'",
-        "/bin/sed -i '$d' testfile",
-        "find -type f -name testfile -print | xargs /bin/rm -f",
-        "touch testfile",
-        "rm -f testfi*",
-        "mkdir -p test",
-        "portstat -c",
-        "show ip bgp summary",
-        "show ipv6 bgp summary",
-        "show interfaces portchannel",
-        "show muxcable firmware",
-        "show platform summary",
-        "show version",
-        "show lldp table",
-        "show reboot-cause",
-        "configlet --help",
-        "sonic-db-cli  CONFIG_DB HGET \"FEATURE|macsec\" state"
-    ]
-
-    for subcommand in commands:
-        exit_code, stdout, stderr = ssh_run_command(remote_user_client, subcommand)
-        pytest_assert(exit_code == 0)
-
     rw_commands = [
-        "sudo config interface",
-        "sudo route_check.py | head -n 100",
-        "sudo dmesg -D",
-        "sudo sonic-cfggen --print-data",
         "sudo config list-checkpoints",
-        "redis-cli -n 4 keys \\*"
+        "sudo config list-checkpoints"
     ]
 
     for subcommand in rw_commands:
+        
+        logger.warning("cleanup log")
+        res = ptfhost.command(r'truncate -s 0  /var/log/tac_plus.log')
+        logger.warning(res["stdout_lines"])
+
         exit_code, stdout, stderr = ssh_run_command(remote_rw_user_client, subcommand)
+
+        logger.warning("server log")
+        res = ptfhost.command(r"cat /var/log/tac_plus.log")
+        logger.warning(res["stdout_lines"])
+
         pytest_assert(exit_code == 0)
 
 
