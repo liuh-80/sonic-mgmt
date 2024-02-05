@@ -1,6 +1,6 @@
 import logging
 import pytest
-from ansible.errors import AnsibleConnectionFailure
+from pytest_ansible.errors import AnsibleConnectionFailure
 from tests.tacacs.utils import setup_tacacs_client, setup_tacacs_server, load_tacacs_creds,\
                     cleanup_tacacs, restore_tacacs_servers, print_tacacs_creds
 
