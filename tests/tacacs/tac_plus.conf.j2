@@ -21,6 +21,11 @@ user = {{ tacacs_rw_user }} {
     member = netadmin
 }
 
+user = {{ tacacs_admin_user }} {
+    login = des {{ tacacs_admin_user_passwd }}
+    member = netadmin
+}
+
 group = netuser {
     default service = permit
     service = exec {

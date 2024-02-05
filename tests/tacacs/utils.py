@@ -1,12 +1,15 @@
+import binascii
+import copy
 import crypt
 import logging
-import re
-import binascii
+import os
 import pytest
+import re
+import yaml
 
 from tests.common.errors import RunAnsibleModuleFail
-from tests.common.utilities import wait_until, check_skip_release, delete_running_config
 from tests.common.helpers.assertions import pytest_assert
+from tests.common.utilities import wait_until, check_skip_release, delete_running_config
 
 logger = logging.getLogger(__name__)
 
@@ -195,6 +198,10 @@ def fix_ld_path_in_config(duthost, ptfhost):
 def setup_tacacs_server(ptfhost, tacacs_creds, duthost):
     """setup tacacs server"""
 
+    duthost_admin_user = duthost.host.options['inventory_manager'].get_host(duthost.hostname).vars['ansible_user']
+    duthost_admin_passwd = duthost.host.options['inventory_manager'].get_host(duthost.hostname).vars['ansible_password']
+    logger.debug("setup_tacacs_server: duthost_admin_user={}, duthost_admin_passwd={}".format(duthost_admin_user, duthost_admin_passwd))
+
     # configure tacacs server
     extra_vars = {'tacacs_passkey': tacacs_creds[duthost.hostname]['tacacs_passkey'],
                   'tacacs_rw_user': tacacs_creds['tacacs_rw_user'],
@@ -207,7 +214,9 @@ def setup_tacacs_server(ptfhost, tacacs_creds, duthost):
                         'abc'),
                   'tacacs_jit_user': tacacs_creds['tacacs_jit_user'],
                   'tacacs_jit_user_passwd': crypt.crypt(tacacs_creds['tacacs_jit_user_passwd'], 'abc'),
-                  'tacacs_jit_user_membership': tacacs_creds['tacacs_jit_user_membership']}
+                  'tacacs_jit_user_membership': tacacs_creds['tacacs_jit_user_membership'],
+                  'tacacs_admin_user': duthost_admin_user,
+                  'tacacs_admin_user_passwd': crypt.crypt(duthost_admin_passwd, 'abc')}
 
     ptfhost.host.options['variable_manager'].extra_vars.update(extra_vars)
     ptfhost.template(src="tacacs/tac_plus.conf.j2", dest="/etc/tacacs+/tac_plus.conf")
@@ -338,3 +347,19 @@ def change_and_wait_aaa_config_update(duthost, command, last_timestamp=None, tim
 
     exist = wait_until(timeout, 1, 0, log_exist, duthost)
     pytest_assert(exist, "Not found aaa config update log: {}".format(command))
+
+
+def print_tacacs_creds(tacacs_creds):
+    print_tacacs_creds = copy.deepcopy(tacacs_creds)
+    if isinstance(print_tacacs_creds, dict):
+        for tacacs_creds_msg in print_tacacs_creds.values():
+            if isinstance(tacacs_creds_msg, dict):
+                if tacacs_creds_msg.get("docker_registry_password"):
+                    tacacs_creds_msg["docker_registry_password"] = "******"
+
+    logger.info('tacacs_creds: {}'.format(str(print_tacacs_creds)))
+
+def load_tacacs_creds():
+    TACACS_CREDS_FILE = 'tacacs_creds.yaml'
+    creds_file_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), TACACS_CREDS_FILE)
+    return yaml.safe_load(open(creds_file_path).read())
