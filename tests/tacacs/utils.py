@@ -200,7 +200,8 @@ def setup_tacacs_server(ptfhost, tacacs_creds, duthost):
 
     duthost_admin_user = duthost.host.options['inventory_manager'].get_host(duthost.hostname).vars['ansible_user']
     duthost_admin_passwd = duthost.host.options['inventory_manager'].get_host(duthost.hostname).vars['ansible_password']
-    logger.debug("setup_tacacs_server: duthost_admin_user={}, duthost_admin_passwd={}".format(duthost_admin_user, duthost_admin_passwd))
+    logger.debug("setup_tacacs_server: duthost_admin_user={}, duthost_admin_passwd={}"
+                 .format(duthost_admin_user, duthost_admin_passwd))
 
     # configure tacacs server
     extra_vars = {'tacacs_passkey': tacacs_creds[duthost.hostname]['tacacs_passkey'],
@@ -358,6 +359,7 @@ def print_tacacs_creds(tacacs_creds):
                     tacacs_creds_msg["docker_registry_password"] = "******"
 
     logger.info('tacacs_creds: {}'.format(str(print_tacacs_creds)))
+
 
 def load_tacacs_creds():
     TACACS_CREDS_FILE = 'tacacs_creds.yaml'
