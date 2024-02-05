@@ -12,6 +12,7 @@ from tests.common.plugins.loganalyzer.loganalyzer import LogAnalyzer
 from tests.platform_tests.thermal_control_test_helper import disable_thermal_policy     # noqa F401
 from .device_mocker import device_mocker_factory        # noqa F401
 from tests.common.helpers.assertions import pytest_assert
+from tests.common.fixtures.tacacs import tacacs_creds, setup_tacacs    # noqa F401
 
 pytestmark = [
     pytest.mark.topology('any')
