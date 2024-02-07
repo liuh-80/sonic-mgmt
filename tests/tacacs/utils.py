@@ -72,7 +72,7 @@ def setup_local_user(duthost, tacacs_creds):
     duthost.shell('sudo echo "{}:{}" | chpasswd'.format(tacacs_creds['local_user'], tacacs_creds['local_user_passwd']))
 
 
-def setup_tacacs_client(duthost, tacacs_creds, tacacs_server_ip):
+def setup_tacacs_client(duthost, tacacs_creds, tacacs_server_ip, tacacs_server_passkey, authorization = "local"):
     """setup tacacs client"""
 
     # UT should failed when set reachable TACACS server with this setup_tacacs_client
@@ -83,7 +83,7 @@ def setup_tacacs_client(duthost, tacacs_creds, tacacs_server_ip):
 
     # configure tacacs client
     default_tacacs_servers = []
-    duthost.shell("sudo config tacacs passkey %s" % tacacs_creds[duthost.hostname]['tacacs_passkey'])
+    duthost.shell("sudo config tacacs passkey %s" % tacacs_server_passkey)
 
     # get default tacacs servers
     config_facts = duthost.config_facts(host=duthost.hostname, source="running")['ansible_facts']
@@ -96,9 +96,12 @@ def setup_tacacs_client(duthost, tacacs_creds, tacacs_server_ip):
     # enable tacacs+
     duthost.shell("sudo config aaa authentication login tacacs+")
 
+    # enable tacacs+ debug
+    duthost.shell("sudo config aaa authentication debug enable")
+
     (skip, _) = check_skip_release(duthost, per_command_authorization_skip_versions)
     if not skip:
-        duthost.shell("sudo config aaa authorization local")
+        duthost.shell("sudo config aaa authorization {}".format(authorization))
 
     (skip, _) = check_skip_release(duthost, per_command_accounting_skip_versions)
     if not skip:
@@ -251,7 +254,8 @@ def cleanup_tacacs(ptfhost, tacacs_creds, duthost):
     cmds = [
         "config tacacs default passkey",
         "config aaa authentication login default",
-        "config aaa authentication failthrough default"
+        "config aaa authentication failthrough default",
+        "config aaa authentication debug disable"
     ]
     duthost.shell_cmds(cmds=cmds)
 
