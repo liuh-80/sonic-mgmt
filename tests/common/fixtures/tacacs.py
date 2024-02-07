@@ -1,16 +1,18 @@
-import os
 import logging
 import pytest
-from tests.tacacs.utils  import setup_tacacs_client, setup_tacacs_server,load_tacacs_creds,\
+from pytest_ansible.errors import AnsibleConnectionFailure
+from tests.tacacs.utils import setup_tacacs_client, setup_tacacs_server, load_tacacs_creds,\
                     cleanup_tacacs, restore_tacacs_servers, print_tacacs_creds
 
 logger = logging.getLogger(__name__)
+TACACS_CREDS_FILE = 'tacacs_creds.yaml'
 
 
 def drop_all_ssh_session(duthost):
     try:
         duthost.shell('sudo ss -K sport ssh')
-    except:
+    except AnsibleConnectionFailure:
+        # Current connection will throw AnsibleConnectionFailure after connection broken
         pass
 
 
