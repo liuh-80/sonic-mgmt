@@ -72,7 +72,8 @@ def setup_local_user(duthost, tacacs_creds):
     duthost.shell('sudo echo "{}:{}" | chpasswd'.format(tacacs_creds['local_user'], tacacs_creds['local_user_passwd']))
 
 
-def setup_tacacs_client(duthost, tacacs_creds, tacacs_server_ip, tacacs_server_passkey, authorization = "local"):
+def setup_tacacs_client(duthost, tacacs_creds, tacacs_server_ip,
+                        tacacs_server_passkey, authorization="local"):
     """setup tacacs client"""
 
     # UT should failed when set reachable TACACS server with this setup_tacacs_client

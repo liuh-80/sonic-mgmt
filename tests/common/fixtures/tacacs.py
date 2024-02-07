@@ -44,7 +44,7 @@ def setup_tacacs(ptfhost, duthosts, enum_rand_one_per_hwsku_hostname, tacacs_cre
 
     # setup per-command authorization with 'tacacs+ local', when command blocked by TACACS server, UT still can pass.
     setup_tacacs_client(duthost, tacacs_creds, tacacs_server_ip, tacacs_server_passkey, "\"tacacs+ local\"")
-    
+
     if not use_lab_tacacs_server:
         setup_tacacs_server(ptfhost, tacacs_creds, duthost)
 
