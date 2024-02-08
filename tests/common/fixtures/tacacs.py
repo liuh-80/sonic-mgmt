@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 TACACS_CREDS_FILE = 'tacacs_creds.yaml'
 
 # Following UT not enable TACACS test:
-# arp/test_arp_textnded.py This module failed when setup test_arp_garp_enabled
+
 
 def drop_all_ssh_session(duthost):
     try:
