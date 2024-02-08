@@ -1568,7 +1568,10 @@ def enum_frontend_dut_hostname(request):
 
 @pytest.fixture(scope="module")
 def enum_rand_one_per_hwsku_hostname(request):
-    return request.param
+    try:
+        return request.param
+    except AttributeError:
+        return None
 
 
 @pytest.fixture(scope="module")

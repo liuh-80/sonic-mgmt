@@ -7,6 +7,8 @@ from tests.tacacs.utils import setup_tacacs_client, setup_tacacs_server, load_ta
 logger = logging.getLogger(__name__)
 TACACS_CREDS_FILE = 'tacacs_creds.yaml'
 
+# Following UT not enable TACACS test:
+# arp/test_arp_textnded.py This module failed when setup test_arp_garp_enabled
 
 def drop_all_ssh_session(duthost):
     try:
@@ -26,6 +28,13 @@ def tacacs_creds(creds_all_duts):
 @pytest.fixture(scope="module", autouse=True)
 def setup_tacacs(ptfhost, duthosts, enum_rand_one_per_hwsku_hostname, tacacs_creds, creds):
     print_tacacs_creds(tacacs_creds)
+
+    # setup_tacacs only support test case using duthost
+    if not enum_rand_one_per_hwsku_hostname:
+        logger.debug("Ignore setup_tacacs because can't find duthost for test.")
+        yield
+        return
+
     duthost = duthosts[enum_rand_one_per_hwsku_hostname]
 
     # Setup TACACS config according to flag defined in /ansible/group_vars/lab/lab.yml
