@@ -1444,6 +1444,8 @@ def pytest_generate_tests(metafunc):        # noqa E302
     elif dut_fixture_name:
         # parameterize only on DUT
         metafunc.parametrize(dut_fixture_name, duts_selected, scope="module", indirect=True)
+        # parameterize dut for enable TACACS on all UT
+        metafunc.parametrize("selected_dut", duts_selected, scope="module", indirect=True)
     elif asic_fixture_name:
         # We have no duts selected, so need asic list for the first DUT
         if len(asics_selected):
@@ -1567,11 +1569,16 @@ def enum_frontend_dut_hostname(request):
 
 
 @pytest.fixture(scope="module")
-def enum_rand_one_per_hwsku_hostname(request):
+def selected_dut(request):
     try:
         return request.param
     except AttributeError:
         return None
+
+
+@pytest.fixture(scope="module")
+def enum_rand_one_per_hwsku_hostname(request):
+    return request.param
 
 
 @pytest.fixture(scope="module")

@@ -26,16 +26,16 @@ def tacacs_creds(creds_all_duts):
 
 
 @pytest.fixture(scope="module", autouse=True)
-def setup_tacacs(ptfhost, duthosts, enum_rand_one_per_hwsku_hostname, tacacs_creds, creds):
+def setup_tacacs(ptfhost, duthosts, selected_dut, tacacs_creds, creds):
     print_tacacs_creds(tacacs_creds)
 
     # setup_tacacs only support test case using duthost
-    if not enum_rand_one_per_hwsku_hostname:
+    if not selected_dut:
         logger.debug("Ignore setup_tacacs because can't find duthost for test.")
         yield
         return
 
-    duthost = duthosts[enum_rand_one_per_hwsku_hostname]
+    duthost = duthosts[selected_dut]
 
     # Setup TACACS config according to flag defined in /ansible/group_vars/lab/lab.yml
     use_lab_tacacs_server = creds['test_with_lab_tacacs_server']
