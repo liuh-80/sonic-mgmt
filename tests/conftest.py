@@ -1444,7 +1444,7 @@ def pytest_generate_tests(metafunc):        # noqa E302
     elif dut_fixture_name:
         # parameterize only on DUT
         metafunc.parametrize(dut_fixture_name, duts_selected, scope="module", indirect=True)
-    
+
         # When selected_dut used and select a dut for test, parameterize dut for enable TACACS on all UT
         if "selected_dut" in metafunc.fixturenames:
             metafunc.parametrize("selected_dut", duts_selected, scope="module", indirect=True)
