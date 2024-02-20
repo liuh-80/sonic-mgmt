@@ -8,6 +8,7 @@ import logging
 import pytest
 import time
 from tests.common.config_reload import config_reload
+from tests.common.fixtures.tacacs import tacacs_creds, setup_tacacs    # noqa F401
 from tests.common.helpers.constants import DEFAULT_NAMESPACE
 
 logger = logging.getLogger(__name__)

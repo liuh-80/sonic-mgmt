@@ -9,6 +9,7 @@ from ptf.mask import Mask
 import json
 from tests.common.fixtures.ptfhost_utils import change_mac_addresses      # noqa F401
 from tests.common.fixtures.ptfhost_utils import remove_ip_addresses       # noqa F401
+from tests.common.fixtures.tacacs import tacacs_creds, setup_tacacs       # noqa F401
 from tests.common.helpers.generators import generate_ip_through_default_route, generate_ip_through_default_v6_route
 from tests.common.helpers.assertions import pytest_assert
 from tests.common.utilities import wait_until

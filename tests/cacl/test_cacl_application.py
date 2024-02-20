@@ -7,6 +7,7 @@ from tests.common.config_reload import config_reload
 from tests.common.utilities import wait_until
 from tests.common.dualtor.mux_simulator_control import toggle_all_simulator_ports_to_upper_tor  # noqa F401
 from tests.common.dualtor.dual_tor_utils import upper_tor_host, lower_tor_host                  # noqa F401
+from tests.common.fixtures.tacacs import tacacs_creds, setup_tacacs                             # noqa F401
 from tests.common.helpers.assertions import pytest_assert
 
 logger = logging.getLogger(__name__)

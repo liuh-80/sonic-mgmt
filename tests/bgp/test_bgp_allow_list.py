@@ -4,6 +4,7 @@ import logging
 import pytest
 
 from tests.common.helpers.assertions import pytest_assert
+from tests.common.fixtures.tacacs import tacacs_creds, setup_tacacs    # noqa F401
 # Constants
 from bgp_helpers import ALLOW_LIST_PREFIX_JSON_FILE, PREFIX_LISTS, TEST_COMMUNITY
 # Functions

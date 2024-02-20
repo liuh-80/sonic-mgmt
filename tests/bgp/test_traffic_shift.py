@@ -8,6 +8,7 @@ import pytest
 
 from bgp_helpers import parse_rib, get_routes_not_announced_to_bgpmon, remove_bgp_neighbors, restore_bgp_neighbors
 from tests.common import config_reload
+from tests.common.fixtures.tacacs import tacacs_creds, setup_tacacs    # noqa F401
 from tests.common.helpers.assertions import pytest_assert
 from tests.common.helpers.constants import DEFAULT_ASIC_ID
 from tests.common.helpers.parallel import parallel_run

@@ -14,6 +14,7 @@ from natsort import natsorted
 from tests.common.reboot import reboot
 from tests.common.utilities import wait_until
 from tests.common.config_reload import config_reload
+from tests.common.fixtures.tacacs import tacacs_creds, setup_tacacs    # noqa F401
 from tests.common.helpers.assertions import pytest_assert
 from tests.common.platform.interface_utils import check_interface_status_of_up_ports
 from bgp_helpers import restart_bgp_session, get_eth_port, get_exabgp_port, get_vm_name, get_bgp_neighbor_ip, \

@@ -14,6 +14,7 @@ import ipaddr as ipaddress
 
 from jinja2 import Template
 from natsort import natsorted
+from tests.common.fixtures.tacacs import tacacs_creds, setup_tacacs    # noqa F401
 from tests.common.helpers.assertions import pytest_assert
 from tests.common.helpers.constants import DEFAULT_NAMESPACE
 from tests.common.helpers.parallel import reset_ansible_local_tmp
