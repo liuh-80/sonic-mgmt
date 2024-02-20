@@ -113,6 +113,12 @@ def setup_tacacs_client(duthost, tacacs_creds, tacacs_server_ip,
     return default_tacacs_servers
 
 
+def convert_db_config_to_cli_parameter(cfg):
+    if cfg == "tacacs+,local":
+        return "\"tacacs+ local\""
+
+    return cfg
+
 def restore_tacacs_servers(duthost):
     # Restore the TACACS plus server in config_db.json
     config_facts = duthost.config_facts(host=duthost.hostname, source="persistent")["ansible_facts"]
@@ -123,6 +129,7 @@ def restore_tacacs_servers(duthost):
     aaa_config = config_facts.get("AAA", {})
     if aaa_config:
         cfg = aaa_config.get("authentication", {}).get("login", "")
+        cfg = convert_db_config_to_cli_parameter(cfg)
         if cfg:
             cmds.append("config aaa authentication login %s" % cfg)
 
@@ -133,10 +140,12 @@ def restore_tacacs_servers(duthost):
             cmds.append("config aaa authentication failthrough disable")
 
         cfg = aaa_config.get("authorization", {}).get("login", "")
+        cfg = convert_db_config_to_cli_parameter(cfg)
         if cfg:
             cmds.append("config aaa authorization %s" % cfg)
 
         cfg = aaa_config.get("accounting", {}).get("login", "")
+        cfg = convert_db_config_to_cli_parameter(cfg)
         if cfg:
             cmds.append("config aaa accounting %s" % cfg)
 
