@@ -119,6 +119,7 @@ def convert_db_config_to_cli_parameter(cfg):
 
     return cfg
 
+
 def restore_tacacs_servers(duthost):
     # Restore the TACACS plus server in config_db.json
     config_facts = duthost.config_facts(host=duthost.hostname, source="persistent")["ansible_facts"]
