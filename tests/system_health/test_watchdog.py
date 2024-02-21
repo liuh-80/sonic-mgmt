@@ -16,7 +16,8 @@ SLEEP_TIME = 10
 
 
 @pytest.fixture
-def pause_orchagent(duthost):
+def pause_orchagent(duthosts, enum_rand_one_per_hwsku_hostname):
+    duthost = duthosts[enum_rand_one_per_hwsku_hostname]
     pid = None
     retry = 3
     while True:
@@ -93,7 +94,7 @@ def create_log_analyzer(duthost):
     return loganalyzer, marker
 
 
-def test_orchagent_watchdog(duthosts, enum_rand_one_per_hwsku_hostname, pause_orchagent):
+def test_orchagent_watchdog(duthosts, enum_rand_one_per_hwsku_hostname, pause_orchagent):           # noqa: F401
     duthost = duthosts[enum_rand_one_per_hwsku_hostname]
 
     # if watchdog_processes does not exits, watchdog been disabled

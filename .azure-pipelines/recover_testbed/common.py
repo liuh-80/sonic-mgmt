@@ -86,6 +86,8 @@ def posix_shell_onie(dut_console, mgmt_ip, image_url, is_nexus=False, is_nokia=F
 
                 # "ONIE: Starting ONIE Service Discovery"
                 if ONIE_START_TO_DISCOVERY in x:
+                    dut_console.remote_conn.send("\n")
+
                     # TODO: Define a function to send command here
                     for i in range(5):
                         dut_console.remote_conn.send('onie-discovery-stop\n')
@@ -152,27 +154,33 @@ def posix_shell_aboot(dut_console, mgmt_ip, image_url):
 
                     if "Aboot" in x and "#" in x:
                         # TODO: Define a function to send command here
+                        dut_console.remote_conn.send("cd /mnt/flash")
+                        dut_console.remote_conn.send("\n")
+                        time.sleep(1)
+
                         dut_console.remote_conn.send("ifconfig ma1 {} netmask {}".format(mgmt_ip.split('/')[0],
                                                      ipaddress.ip_interface(mgmt_ip).with_netmask.split('/')[1]))
                         dut_console.remote_conn.send("\n")
-
                         time.sleep(1)
 
                         dut_console.remote_conn.send("route add default gw {}".format(gw_ip))
                         dut_console.remote_conn.send("\n")
-
                         time.sleep(1)
 
                         dut_console.remote_conn.send("ip route add default via {} dev ma1".format(gw_ip))
                         dut_console.remote_conn.send("\n")
+                        time.sleep(1)
 
+                        # Remove image to avoid "File exists" error
+                        dut_console.remote_conn.send("rm -f {}".format(image_url.split("/")[-1]))
+                        dut_console.remote_conn.send("\n")
                         time.sleep(1)
 
                         dut_console.remote_conn.send("wget {}".format(image_url))
                         dut_console.remote_conn.send("\n")
 
                         for i in range(5):
-                            time.sleep(10)
+                            time.sleep(60)
                             x = dut_console.remote_conn.recv(1024)
                             x = x.decode('ISO-8859-9')
                             if "ETA" in x:

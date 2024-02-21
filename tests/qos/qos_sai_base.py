@@ -33,8 +33,8 @@ class QosBase:
     """
     Common APIs
     """
-    SUPPORTED_T0_TOPOS = ["t0", "t0-56-po2vlan", "t0-64", "t0-116", "t0-35", "dualtor-56", "dualtor-120", "dualtor",
-                          "t0-120", "t0-80", "t0-backend", "t0-56-o8v48"]
+    SUPPORTED_T0_TOPOS = ["t0", "t0-56-po2vlan", "t0-64", "t0-116", "t0-35", "dualtor-56", "dualtor-64", "dualtor-120",
+                          "dualtor", "t0-120", "t0-80", "t0-backend", "t0-56-o8v48"]
     SUPPORTED_T1_TOPOS = ["t1-lag", "t1-64-lag", "t1-56-lag", "t1-backend", "t1-28-lag"]
     SUPPORTED_PTF_TOPOS = ['ptf32', 'ptf64']
     SUPPORTED_ASIC_LIST = ["pac", "gr", "gb", "td2", "th", "th2", "spc1", "spc2", "spc3", "spc4", "td3", "th3",
@@ -2202,7 +2202,7 @@ class QosSaiBase(QosBase):
 
     @pytest.fixture(scope="function", autouse=False)
     def skip_pacific_dst_asic(self, dutConfig):
-        if dutConfig['dstDutAsic'] == "pac":
+        if dutConfig.get('dstDutAsic', 'UnknownDstDutAsic') == "pac":
             pytest.skip(
                 "This test is skipped since egress asic is cisco-8000 Q100.")
         yield
@@ -2243,3 +2243,13 @@ class QosSaiBase(QosBase):
             self.runPtfTest(
                 ptfhost, testCase=saiQosTest, testParams=testParams
             )
+
+    @pytest.fixture(scope="function", autouse=False)
+    def skip_longlink(self, dutQosConfig):
+        portSpeedCableLength = dutQosConfig["portSpeedCableLength"]
+        match = re.search("_([0-9]*)m", portSpeedCableLength)
+        if match and int(match.group(1)) > 2000:
+            pytest.skip(
+                "This test is skipped for longlink.")
+        yield
+        return
