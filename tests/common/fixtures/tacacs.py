@@ -25,8 +25,15 @@ def tacacs_creds(creds_all_duts):
     return creds_all_duts
 
 
+def collect_artifact(duthost, module_name):
+    files = ["/etc/passwd", "/var/log/auth.log", "/var/log/syslog"]
+    dst_patch = "logs/tacacs/{}".format(module_name)
+    for file in files:
+        duthost.fetch(src=file, dest=dst_patch, flat=True)
+
+
 @pytest.fixture(scope="module", autouse=True)
-def setup_tacacs(ptfhost, duthosts, selected_dut, tacacs_creds, creds):
+def setup_tacacs(ptfhost, duthosts, selected_dut, tacacs_creds, creds, request):
     print_tacacs_creds(tacacs_creds)
 
     # setup_tacacs only support test case using duthost
@@ -63,6 +70,9 @@ def setup_tacacs(ptfhost, duthosts, selected_dut, tacacs_creds, creds):
     drop_all_ssh_session(duthost)
 
     yield
+
+    if request.session.testsfailed:
+        collect_artifact(duthost, request.module.__name__)
 
     cleanup_tacacs(ptfhost, tacacs_creds, duthost)
 
