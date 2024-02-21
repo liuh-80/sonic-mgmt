@@ -21,6 +21,7 @@ from tests.common.dualtor.tunnel_traffic_utils import tunnel_traffic_monitor    
 from tests.common.fixtures.ptfhost_utils import run_icmp_responder                  # noqa F401
 from tests.common.fixtures.ptfhost_utils import run_garp_service                    # noqa F401
 from tests.common.fixtures.ptfhost_utils import change_mac_addresses                # noqa F401
+from tests.common.fixtures.tacacs import tacacs_creds, setup_tacacs                 # noqa F401
 from tests.common.helpers.assertions import pytest_assert
 from tests.common.utilities import wait_until
 

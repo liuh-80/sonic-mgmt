@@ -5,6 +5,7 @@ import ptf.testutils as testutils
 
 from constants import LOCAL_PTF_INTF, REMOTE_PTF_INTF
 import packets
+from tests.common.fixtures.tacacs import tacacs_creds, setup_tacacs    # noqa F401
 
 logger = logging.getLogger(__name__)
 

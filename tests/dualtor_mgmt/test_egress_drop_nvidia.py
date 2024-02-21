@@ -9,6 +9,7 @@ from tests.common.dualtor.mux_simulator_control import toggle_simulator_port_to_
 from tests.common.dualtor.dual_tor_utils import \
     upper_tor_host, lower_tor_host, dualtor_info, check_muxcable_status  # noqa F401
 from tests.common.fixtures.ptfhost_utils import change_mac_addresses, run_icmp_responder, run_garp_service  # noqa F401
+from tests.common.fixtures.tacacs import tacacs_creds, setup_tacacs                                         # noqa F401
 from tests.common.dualtor.mux_simulator_control import toggle_all_simulator_ports_to_rand_selected_tor # noqa F401
 from ptf.mask import Mask
 from ptf import testutils

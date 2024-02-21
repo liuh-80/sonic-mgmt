@@ -8,6 +8,7 @@ import time
 import pytest
 from paramiko.ssh_exception import AuthenticationException
 from ptf import mask, packet
+from tests.common.fixtures.tacacs import tacacs_creds, setup_tacacs    # noqa F401
 from tests.common.helpers.assertions import pytest_assert
 from tests.common.constants import DEFAULT_SSH_CONNECT_PARAMS
 from tests.common.utilities import get_image_type

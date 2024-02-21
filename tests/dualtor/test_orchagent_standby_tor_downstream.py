@@ -19,6 +19,7 @@ from tests.common.fixtures.ptfhost_utils import copy_ptftests_directory         
 from tests.common.fixtures.ptfhost_utils import change_mac_addresses                # noqa: F401
 from tests.common.fixtures.ptfhost_utils import run_garp_service                    # noqa: F401
 from tests.common.fixtures.ptfhost_utils import run_icmp_responder                  # noqa: F401
+from tests.common.fixtures.tacacs import tacacs_creds, setup_tacacs                 # noqa F401
 from tests.common.helpers.assertions import pytest_assert as pt_assert
 from tests.common.dualtor.tunnel_traffic_utils import tunnel_traffic_monitor        # noqa: F401
 from tests.common.dualtor.server_traffic_utils import ServerTrafficMonitor

@@ -26,6 +26,7 @@ from tests.common.utilities import wait_until
 from tests.common.platform.device_utils import fanout_switch_port_lookup
 from tests.common.dualtor.mux_simulator_control import toggle_all_simulator_ports_to_rand_selected_tor_m    # noqa F401
 from tests.common.fixtures.ptfhost_utils import copy_arp_responder_py       # noqa F401
+from tests.common.fixtures.tacacs import tacacs_creds, setup_tacacs         # noqa F401
 from tests.common.utilities import is_ipv4_address
 from tests.common import constants
 from tests.common import config_reload

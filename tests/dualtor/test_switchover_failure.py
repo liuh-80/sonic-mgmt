@@ -9,6 +9,7 @@ from tests.common.dualtor.mux_simulator_control import (  # noqa: F401
     toggle_all_simulator_ports_to_rand_unselected_tor,
 )
 from tests.common.fixtures.ptfhost_utils import run_icmp_responder, run_garp_service  # noqa: F401
+from tests.common.fixtures.tacacs import tacacs_creds, setup_tacacs                   # noqa F401
 from tests.common.utilities import wait_until
 
 logger = logging.getLogger(__name__)

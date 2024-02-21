@@ -22,6 +22,7 @@ import os
 
 import pytest
 
+from tests.common.fixtures.tacacs import tacacs_creds, setup_tacacs         # noqa F401
 from tests.common.utilities import wait
 from tests.common.utilities import compare_crm_facts
 from tests.common.helpers.assertions import pytest_assert

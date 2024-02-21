@@ -30,6 +30,7 @@ from collections import namedtuple
 from tests.copp import copp_utils
 from tests.ptf_runner import ptf_runner
 from tests.common import config_reload, constants
+from tests.common.fixtures.tacacs import tacacs_creds, setup_tacacs    # noqa F401
 from tests.common.system_utils import docker
 from tests.common.reboot import reboot
 from tests.common.utilities import skip_release

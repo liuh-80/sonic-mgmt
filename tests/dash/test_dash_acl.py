@@ -4,6 +4,7 @@ import pytest
 import ptf.testutils as testutils
 
 from dash_acl import check_dataplane, acl_fields_test, acl_multi_stage_test  # noqa: F401
+from tests.common.fixtures.tacacs import tacacs_creds, setup_tacacs    # noqa F401
 
 logger = logging.getLogger(__name__)
 

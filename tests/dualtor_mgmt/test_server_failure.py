@@ -16,6 +16,7 @@ from tests.common.dualtor.dual_tor_utils import lower_tor_host                  
 from tests.common.dualtor.nic_simulator_control import simulator_server_down_active_active              # noqa F401
 from tests.common.fixtures.ptfhost_utils import change_mac_addresses, run_garp_service, \
                                                 run_icmp_responder                                      # noqa: F401
+from tests.common.fixtures.tacacs import tacacs_creds, setup_tacacs                                     # noqa F401
 from tests.common.utilities import wait_until
 
 

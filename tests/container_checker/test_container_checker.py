@@ -8,6 +8,7 @@ import pytest
 
 from pkg_resources import parse_version
 from tests.common import config_reload
+from tests.common.fixtures.tacacs import tacacs_creds, setup_tacacs    # noqa F401
 from tests.common.helpers.assertions import pytest_assert
 from tests.common.helpers.assertions import pytest_require
 from tests.common.helpers.dut_utils import check_container_state

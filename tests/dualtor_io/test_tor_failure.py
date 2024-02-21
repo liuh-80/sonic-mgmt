@@ -10,6 +10,7 @@ from tests.common.dualtor.mux_simulator_control import toggle_all_simulator_port
 from tests.common.dualtor.tor_failure_utils import reboot_tor, tor_blackhole_traffic, wait_for_device_reachable     # noqa F401
 from tests.common.dualtor.tor_failure_utils import wait_for_mux_container, wait_for_pmon_container                  # noqa F401
 from tests.common.fixtures.ptfhost_utils import run_icmp_responder, run_garp_service, change_mac_addresses          # noqa F401
+from tests.common.fixtures.tacacs import tacacs_creds, setup_tacacs                                                 # noqa F401
 from tests.common.dualtor.nic_simulator_control import mux_status_from_nic_simulator                                # noqa F401
 from tests.common.dualtor.nic_simulator_control import ForwardingState
 from tests.common.dualtor.tunnel_traffic_utils import tunnel_traffic_monitor                                        # noqa F401
