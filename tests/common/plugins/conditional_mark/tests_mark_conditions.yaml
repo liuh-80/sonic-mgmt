@@ -1375,6 +1375,21 @@ tacacs/test_authorization.py::test_authorization_tacacs_and_local:
       - https://github.com/sonic-net/sonic-mgmt/issues/11349
 
 #######################################
+#####           tacacs          #####
+#######################################
+tacacs/test_rw_user.py::test_rw_user_ipv6:
+  skip:
+    reason: "Testcase ignored due to Github issue: https://github.com/sonic-net/sonic-mgmt/issues/11785"
+    conditions:
+      - https://github.com/sonic-net/sonic-mgmt/issues/11785
+
+tacacs/test_ro_user.py::test_ro_user_ipv6:
+  skip:
+    reason: "Testcase ignored due to Github issue: https://github.com/sonic-net/sonic-mgmt/issues/11785"
+    conditions:
+      - https://github.com/sonic-net/sonic-mgmt/issues/11785
+
+#######################################
 #####           telemetry         #####
 #######################################
 telemetry/test_events.py:
