@@ -180,7 +180,8 @@ class TestbedHealthChecker:
 
         for sonichost in self.sonichosts:
 
-            rst = sonichost.shell(f"jq '.MGMT_INTERFACE' {config_db_file}", module_ignore_errors=True)["stdout"]
+            rst = sonichost.shell(f"jq '.MGMT_INTERFACE' {config_db_file}", module_ignore_errors=True).get("stdout",
+                                                                                                           None)
 
             # If valid stdout
             if rst is not None and rst.strip() != "":
@@ -201,8 +202,8 @@ class TestbedHealthChecker:
 
                 if not ipv4_exists:
                     ipv4_not_exists_hosts.append(sonichost.hostname)
-                    logger.info("{} deos not have mgmt-ipv4 address.".format(sonichost.hostname))
-                    self.check_result.errmsg.append("{} deos not have mgmt-ipv4 address.".format(sonichost.hostname))
+                    logger.info("{} does not have mgmt-ipv4 address.".format(sonichost.hostname))
+                    self.check_result.errmsg.append("{} does not have mgmt-ipv4 address.".format(sonichost.hostname))
 
         if len(ipv4_not_exists_hosts) > 0:
             raise HostsUnreachable(self.check_result.errmsg)
@@ -277,10 +278,10 @@ class TestbedHealthChecker:
 
         except Exception as e:
             # catch other exceptions
-            logger.info("An error occurred: {}".format(e))
+            logger.info(repr(e))
             self.check_result.code = 4
-            self.check_result.errmsg = ["An error occurred."]
-            self.check_result.data = str(e)
+            self.check_result.errmsg = [repr(e)]
+            self.check_result.data = None
 
         finally:
             # If output file is specified, write result to it.
