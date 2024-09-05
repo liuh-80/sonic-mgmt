@@ -1,7 +1,7 @@
 import pytest
 
 
-def pytest_assert(condition, message=None):
+def pytest_assert(condition, message=""):
     __tracebackhide__ = True
     if not condition:
         if not isinstance(message, str):
