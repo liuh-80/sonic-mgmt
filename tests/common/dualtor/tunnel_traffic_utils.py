@@ -250,7 +250,7 @@ def tunnel_traffic_monitor(ptfadapter, tbinfo):
             return " ,".join(check_res)
 
         def __init__(self, standby_tor, active_tor=None, existing=True, inner_packet=None,
-                     check_items=("ttl", "tos", "queue"), packet_count=10, skip_traffic_test=False):
+                     check_items=("ttl", "tos", "queue"), packet_count=10):
             """
             Init the tunnel traffic monitor.
 
@@ -262,7 +262,6 @@ def tunnel_traffic_monitor(ptfadapter, tbinfo):
             self.listen_ports = sorted(self._get_t1_ptf_port_indexes(standby_tor, tbinfo))
             self.ptfadapter = ptfadapter
             self.packet_count = packet_count
-            self.skip_traffic_test = skip_traffic_test
 
             standby_tor_cfg_facts = self.standby_tor.config_facts(
                 host=self.standby_tor.hostname, source="running"
@@ -279,9 +278,7 @@ def tunnel_traffic_monitor(ptfadapter, tbinfo):
                 ][0]
 
             self.existing = existing
-            self.inner_packet = None
-            if self.existing:
-                self.inner_packet = inner_packet
+            self.inner_packet = inner_packet
             self.exp_pkt = self._build_tunnel_packet(self.standby_tor_lo_addr, self.active_tor_lo_addr,
                                                      inner_packet=self.inner_packet)
             self.rec_pkt = None
@@ -295,15 +292,17 @@ def tunnel_traffic_monitor(ptfadapter, tbinfo):
         def __exit__(self, *exc_info):
             if exc_info[0]:
                 return
-            if self.skip_traffic_test is True:
-                logging.info("Skip tunnel traffic verify due to traffic test was skipped.")
-                return
             try:
-                port_index, rec_pkt = testutils.verify_packet_any_port(
+                result = testutils.verify_packet_any_port(
                     ptfadapter,
                     self.exp_pkt,
                     ports=self.listen_ports
                 )
+                if isinstance(result, tuple):
+                    port_index, rec_pkt = result
+                elif isinstance(result, bool):
+                    logging.info("Using dummy testutils to skip traffic test.")
+                    return
             except AssertionError as detail:
                 logging.debug("Error occurred in polling for tunnel traffic", exc_info=True)
                 if "Did not receive expected packet on any of ports" in str(detail):

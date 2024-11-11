@@ -183,6 +183,8 @@ t2:
   - voq/test_voq_intfs.py
   - voq/test_voq_ipfwd.py
   - voq/test_voq_nbr.py
+  - test_vs_chassis_setup.py
+  - voq/test_voq_init.py
 
 dualtor:
   # This test only support on dualtor-aa testbed
@@ -214,6 +216,7 @@ tgen:
   - snappi_tests/bgp/test_bgp_rib_in_convergence.py
   - snappi_tests/bgp/test_bgp_scalability.py
   - snappi_tests/ecn/test_dequeue_ecn_with_snappi.py
+  - snappi_tests/ecn/test_ecn_marking_cisco8000.py
   - snappi_tests/ecn/test_red_accuracy_with_snappi.py
   - snappi_tests/multidut/bgp/test_bgp_outbound_downlink_port_flap.py
   - snappi_tests/multidut/bgp/test_bgp_outbound_downlink_process_crash.py
@@ -237,6 +240,7 @@ tgen:
   - snappi_tests/multidut/pfcwd/test_multidut_pfcwd_basic_with_snappi.py
   - snappi_tests/multidut/pfcwd/test_multidut_pfcwd_burst_storm_with_snappi.py
   - snappi_tests/multidut/pfcwd/test_multidut_pfcwd_m2o_with_snappi.py
+  - snappi_tests/multidut/pfcwd/test_multidut_pfcwd_runtime_traffic_with_snappi.py
   - snappi_tests/lacp/test_add_remove_link_from_dut.py
   - snappi_tests/lacp/test_add_remove_link_physically.py
   - snappi_tests/lacp/test_lacp_timers_effect.py
@@ -253,6 +257,7 @@ tgen:
   - snappi_tests/pfcwd/test_pfcwd_m2o_with_snappi.py
   - snappi_tests/pfcwd/test_pfcwd_runtime_traffic_with_snappi.py
   - snappi_tests/qos/test_ipip_packet_reorder_with_snappi.py
+  - snappi_tests/test_multidut_snappi.py
 
 snappi:
   # Snappi test only support on physical snappi testbed

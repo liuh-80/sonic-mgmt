@@ -108,7 +108,8 @@ def config_reload_minigraph_with_rendered_golden_config_override(
 def pfcwd_feature_enabled(duthost):
     device_metadata = duthost.config_facts(host=duthost.hostname, source="running")['ansible_facts']['DEVICE_METADATA']
     pfc_status = device_metadata['localhost']["default_pfcwd_status"]
-    return pfc_status == 'enable'
+    switch_role = device_metadata['localhost'].get('type', '')
+    return pfc_status == 'enable' and switch_role not in ['MgmtToRRouter', 'BmcMgmtToRRouter']
 
 
 @ignore_loganalyzer
@@ -183,8 +184,8 @@ def config_reload(sonic_host, config_source='config_db', wait=120, start_bgp=Tru
     elif config_source == 'running_golden_config':
         golden_path = '/etc/sonic/running_golden_config.json'
         if sonic_host.is_multi_asic:
-            for asic in sonic_host.asics:
-                golden_path = f'{golden_path},/etc/sonic/running_golden_config{asic.asic_index}.json'  # noqa: E231
+            for asic in range(sonic_host.num_asics()):
+                golden_path = f'{golden_path},/etc/sonic/running_golden_config{asic}.json'  # noqa: E231
         cmd = f'config reload -y -l {golden_path} &>/dev/null'
         if config_force_option_supported(sonic_host):
             cmd = f'config reload -y -f -l {golden_path} &>/dev/null'
@@ -203,9 +204,10 @@ def config_reload(sonic_host, config_source='config_db', wait=120, start_bgp=Tru
         wait_critical_processes(sonic_host)
         # PFCWD feature does not enable on some topology, for example M0
         if config_source == 'minigraph' and pfcwd_feature_enabled(sonic_host):
-            pytest_assert(wait_until(wait + 300, 20, 0, chk_for_pfc_wd, sonic_host),
-                          "PFC_WD is missing in CONFIG-DB")
-
+            # Supervisor node doesn't have PFC_WD
+            if not sonic_host.is_supervisor_node():
+                pytest_assert(wait_until(wait + 300, 20, 0, chk_for_pfc_wd, sonic_host),
+                              "PFC_WD is missing in CONFIG-DB")
         if check_intf_up_ports:
             pytest_assert(wait_until(wait + 300, 20, 0, check_interface_status_of_up_ports, sonic_host),
                           "Not all ports that are admin up on are operationally up")
