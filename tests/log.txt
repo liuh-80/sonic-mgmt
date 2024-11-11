@@ -1,0 +1,2199 @@
+=== Running tests in groups ===
+Running: python3 -m pytest dash/test_dash_vnet.py --inventory veos_vtb --host-pattern vlab-01 --testbed vms-kvm-t0 --testbed_file vtestbed.csv --log-cli-level warning --log-file-level debug --kube_master unset --showlocals --assert plain --show-capture no -rav --allow_recover --ignore=ptftests --ignore=acstests --ignore=saitests --ignore=scripts --ignore=k8s --ignore=sai_qualify --junit-xml=logs/tr.xml --log-file=logs/test.log
+============================= test session starts ==============================
+platform linux -- Python 3.8.10, pytest-7.4.0, pluggy-1.5.0
+ansible: 2.13.13
+rootdir: /data/sonic-mgmt/tests
+configfile: pytest.ini
+plugins: metadata-3.1.1, allure-pytest-2.8.22, ansible-4.0.0, xdist-1.28.0, html-4.1.1, forked-1.6.0, repeat-0.9.3
+['conf-name', 'group-name', 'topo', 'ptf_image_name', 'ptf', 'ptf_ip', 'ptf_ipv6', 'server', 'vm_base', 'dut', 'inv_name', 'auto_recover', 'comment']
+Finished testbed info generating.
+collected 32 items
+
+dash/test_dash_vnet.py::test_outbound_vnet[udp-no-underlay-route] ERROR  [  3%]
+------------------------------ live log teardown -------------------------------
+06:42:54 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_vnet[udp-with-underlay-route] ERROR [  6%]
+------------------------------ live log teardown -------------------------------
+06:42:56 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_vnet[tcp-no-underlay-route] ERROR  [  9%]
+------------------------------ live log teardown -------------------------------
+06:42:57 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_vnet[tcp-with-underlay-route] ERROR [ 12%]
+------------------------------ live log teardown -------------------------------
+06:42:59 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_vnet[echo_request-no-underlay-route] ERROR [ 15%]
+------------------------------ live log teardown -------------------------------
+06:43:01 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_vnet[echo_request-with-underlay-route] ERROR [ 18%]
+------------------------------ live log teardown -------------------------------
+06:43:03 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_vnet[echo_reply-no-underlay-route] ERROR [ 21%]
+------------------------------ live log teardown -------------------------------
+06:43:05 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_vnet[echo_reply-with-underlay-route] ERROR [ 25%]
+------------------------------ live log teardown -------------------------------
+06:43:07 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_vnet_direct[udp-no-underlay-route] ERROR [ 28%]
+------------------------------ live log teardown -------------------------------
+06:43:08 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_vnet_direct[udp-with-underlay-route] ERROR [ 31%]
+------------------------------ live log teardown -------------------------------
+06:43:10 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_vnet_direct[tcp-no-underlay-route] ERROR [ 34%]
+------------------------------ live log teardown -------------------------------
+06:43:12 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_vnet_direct[tcp-with-underlay-route] ERROR [ 37%]
+------------------------------ live log teardown -------------------------------
+06:43:14 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_vnet_direct[echo_request-no-underlay-route] ERROR [ 40%]
+------------------------------ live log teardown -------------------------------
+06:43:16 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_vnet_direct[echo_request-with-underlay-route] ERROR [ 43%]
+------------------------------ live log teardown -------------------------------
+06:43:17 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_vnet_direct[echo_reply-no-underlay-route] ERROR [ 46%]
+------------------------------ live log teardown -------------------------------
+06:43:19 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_vnet_direct[echo_reply-with-underlay-route] ERROR [ 50%]
+------------------------------ live log teardown -------------------------------
+06:43:21 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_direct[udp-no-underlay-route] ERROR [ 53%]
+------------------------------ live log teardown -------------------------------
+06:43:23 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_direct[udp-with-underlay-route] ERROR [ 56%]
+------------------------------ live log teardown -------------------------------
+06:43:24 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_direct[tcp-no-underlay-route] ERROR [ 59%]
+------------------------------ live log teardown -------------------------------
+06:43:26 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_direct[tcp-with-underlay-route] ERROR [ 62%]
+------------------------------ live log teardown -------------------------------
+06:43:28 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_direct[echo_request-no-underlay-route] ERROR [ 65%]
+------------------------------ live log teardown -------------------------------
+06:43:30 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_direct[echo_request-with-underlay-route] ERROR [ 68%]
+------------------------------ live log teardown -------------------------------
+06:43:31 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_direct[echo_reply-no-underlay-route] ERROR [ 71%]
+------------------------------ live log teardown -------------------------------
+06:43:33 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_outbound_direct[echo_reply-with-underlay-route] ERROR [ 75%]
+------------------------------ live log teardown -------------------------------
+06:43:35 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_inbound_vnet_pa_validate[udp-no-underlay-route] ERROR [ 78%]
+------------------------------ live log teardown -------------------------------
+06:43:37 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_inbound_vnet_pa_validate[udp-with-underlay-route] ERROR [ 81%]
+------------------------------ live log teardown -------------------------------
+06:43:39 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_inbound_vnet_pa_validate[tcp-no-underlay-route] ERROR [ 84%]
+------------------------------ live log teardown -------------------------------
+06:43:41 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_inbound_vnet_pa_validate[tcp-with-underlay-route] ERROR [ 87%]
+------------------------------ live log teardown -------------------------------
+06:43:42 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_inbound_vnet_pa_validate[echo_request-no-underlay-route] ERROR [ 90%]
+------------------------------ live log teardown -------------------------------
+06:43:44 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_inbound_vnet_pa_validate[echo_request-with-underlay-route] ERROR [ 93%]
+------------------------------ live log teardown -------------------------------
+06:43:45 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_inbound_vnet_pa_validate[echo_reply-no-underlay-route] ERROR [ 96%]
+------------------------------ live log teardown -------------------------------
+06:43:47 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+dash/test_dash_vnet.py::test_inbound_vnet_pa_validate[echo_reply-with-underlay-route] ERROR [100%]
+------------------------------ live log teardown -------------------------------
+06:43:48 memory_utilization.check_memory_threshol L0042 WARNING| Skipping memory check for monit-memory_usage due to zero value
+
+
+==================================== ERRORS ====================================
+_________ ERROR at setup of test_outbound_vnet[udp-no-underlay-route] __________
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+________ ERROR at setup of test_outbound_vnet[udp-with-underlay-route] _________
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+_________ ERROR at setup of test_outbound_vnet[tcp-no-underlay-route] __________
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+________ ERROR at setup of test_outbound_vnet[tcp-with-underlay-route] _________
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+_____ ERROR at setup of test_outbound_vnet[echo_request-no-underlay-route] _____
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+____ ERROR at setup of test_outbound_vnet[echo_request-with-underlay-route] ____
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+______ ERROR at setup of test_outbound_vnet[echo_reply-no-underlay-route] ______
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+_____ ERROR at setup of test_outbound_vnet[echo_reply-with-underlay-route] _____
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+______ ERROR at setup of test_outbound_vnet_direct[udp-no-underlay-route] ______
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+_____ ERROR at setup of test_outbound_vnet_direct[udp-with-underlay-route] _____
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+______ ERROR at setup of test_outbound_vnet_direct[tcp-no-underlay-route] ______
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+_____ ERROR at setup of test_outbound_vnet_direct[tcp-with-underlay-route] _____
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+_ ERROR at setup of test_outbound_vnet_direct[echo_request-no-underlay-route] __
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+_ ERROR at setup of test_outbound_vnet_direct[echo_request-with-underlay-route] _
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+__ ERROR at setup of test_outbound_vnet_direct[echo_reply-no-underlay-route] ___
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+_ ERROR at setup of test_outbound_vnet_direct[echo_reply-with-underlay-route] __
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+________ ERROR at setup of test_outbound_direct[udp-no-underlay-route] _________
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+_______ ERROR at setup of test_outbound_direct[udp-with-underlay-route] ________
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+________ ERROR at setup of test_outbound_direct[tcp-no-underlay-route] _________
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+_______ ERROR at setup of test_outbound_direct[tcp-with-underlay-route] ________
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+____ ERROR at setup of test_outbound_direct[echo_request-no-underlay-route] ____
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+___ ERROR at setup of test_outbound_direct[echo_request-with-underlay-route] ___
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+_____ ERROR at setup of test_outbound_direct[echo_reply-no-underlay-route] _____
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+____ ERROR at setup of test_outbound_direct[echo_reply-with-underlay-route] ____
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+____ ERROR at setup of test_inbound_vnet_pa_validate[udp-no-underlay-route] ____
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+___ ERROR at setup of test_inbound_vnet_pa_validate[udp-with-underlay-route] ___
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+____ ERROR at setup of test_inbound_vnet_pa_validate[tcp-no-underlay-route] ____
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+___ ERROR at setup of test_inbound_vnet_pa_validate[tcp-with-underlay-route] ___
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+_ ERROR at setup of test_inbound_vnet_pa_validate[echo_request-no-underlay-route] _
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+_ ERROR at setup of test_inbound_vnet_pa_validate[echo_request-with-underlay-route] _
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+_ ERROR at setup of test_inbound_vnet_pa_validate[echo_reply-no-underlay-route] _
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+_ ERROR at setup of test_inbound_vnet_pa_validate[echo_reply-with-underlay-route] _
+
+duthost = <MultiAsicSonicHost vlab-01>
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+tbinfo = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+
+    @pytest.fixture(scope="function")
+    def dash_config_info(duthost, config_facts, minigraph_facts, tbinfo):
+        dash_info = {
+            ENI: "F4939FEFC47E",
+            VM_VNI: 4321,
+            VNET1_VNI: 1000,
+            VNET1_NAME: "Vnet1",
+            VNET2_VNI: 2000,
+            VNET2_NAME: "Vnet2",
+            REMOTE_CA_IP: "20.2.2.2",
+            LOCAL_CA_IP: "11.1.1.1",
+            REMOTE_ENI_MAC: "F9:22:83:99:22:A2",
+            LOCAL_ENI_MAC: "F4:93:9F:EF:C4:7E",
+            REMOTE_CA_PREFIX: "20.2.2.0/24",
+            ACL_GROUP: "group1",
+            ACL_STAGE: 5
+        }
+        loopback_intf_ip = ip_interface(list(list(config_facts["LOOPBACK_INTERFACE"].values())[0].keys())[0])
+        dash_info[LOOPBACK_IP] = str(loopback_intf_ip.ip)
+        dash_info[DUT_MAC] = config_facts["DEVICE_METADATA"]["localhost"]["mac"]
+    
+        neigh_table = duthost.switch_arptable()['ansible_facts']['arptable']
+        topo = tbinfo["topo"]["name"]
+        for neigh_ip, config in list(config_facts["BGP_NEIGHBOR"].items()):
+            # For dpu with 2 ports Pick the first two BGP neighbor IPs since these should already be learned on the DUT
+            # Take neighbor 1 as local PA, take neighbor 2 as remote PA
+            if ip_interface(neigh_ip).version == 4:
+                if LOCAL_PA_IP not in dash_info:
+                    dash_info[LOCAL_PA_IP] = neigh_ip
+>                   intf, _ = get_intf_from_ip(config['local_addr'], config_facts)
+
+config     = {'admin_status': 'up', 'asn': '64600', 'holdtime': '10', 'keepalive': '3', ...}
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+dash_info  = {'acl_group': 'group1', 'acl_stage': 5, 'dut_mac': '22:48:23:27:33:d8', 'eni': 'F4939FEFC47E', ...}
+duthost    = <MultiAsicSonicHost vlab-01>
+loopback_intf_ip = IPv4Interface('10.1.0.32/32')
+minigraph_facts = {'deployment_id': '1', 'dhcp_servers': ['192.0.0.1', '192.0.0.2', '192.0.0.3', '192.0.0.4'], 'dhcpv6_servers': ['fc02:2000::1', 'fc02:2000::2', 'fc02:2000::3', 'fc02:2000::4'], 'forced_mgmt_routes': ['172.17.0.1/24'], ...}
+neigh_ip   = '10.0.0.57'
+neigh_table = {'v4': {'10.0.0.57': {'interface': 'PortChannel101', 'macaddress': '26:1c:ff:0c:32:2f', 'state': 'REACHABLE'}, '10.0.0...EACHABLE'}, 'fc00::7e': {'interface': 'PortChannel104', 'macaddress': '8a:99:99:87:2c:fd', 'state': 'REACHABLE'}, ...}}
+tbinfo     = {'auto_recover': 'False', 'comment': 'Tests virtual switch vm', 'conf-name': 'vms-kvm-t0', 'duts': ['vlab-01'], ...}
+topo       = 't0'
+
+dash/conftest.py:152: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+local_ip = '10.0.0.56'
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+
+    def get_intf_from_ip(local_ip, config_facts):
+>       for intf, config in list(config_facts["INTERFACE"].items()):
+E       KeyError: 'INTERFACE'
+
+config_facts = {'AAA': {'accounting': {'login': 'tacacs+,local'}, 'authentication': {'login': 'tacacs+'}, 'authorization': {'login': ...led'}, 'dhcp_server': {'available_mem_threshold': '10.0', 'rate_limit_interval': '600', 'state': 'enabled'}, ...}, ...}
+local_ip   = '10.0.0.56'
+
+dash/conftest.py:111: KeyError
+=============================== warnings summary ===============================
+../../../usr/local/lib/python3.8/dist-packages/paramiko/transport.py:236
+  /usr/local/lib/python3.8/dist-packages/paramiko/transport.py:236: CryptographyDeprecationWarning: Blowfish has been deprecated
+    "class": algorithms.Blowfish,
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+------------ generated xml file: /data/sonic-mgmt/tests/logs/tr.xml ------------
+=========================== short test summary info ============================
+ERROR dash/test_dash_vnet.py::test_outbound_vnet[udp-no-underlay-route] - Key...
+ERROR dash/test_dash_vnet.py::test_outbound_vnet[udp-with-underlay-route] - K...
+ERROR dash/test_dash_vnet.py::test_outbound_vnet[tcp-no-underlay-route] - Key...
+ERROR dash/test_dash_vnet.py::test_outbound_vnet[tcp-with-underlay-route] - K...
+ERROR dash/test_dash_vnet.py::test_outbound_vnet[echo_request-no-underlay-route]
+ERROR dash/test_dash_vnet.py::test_outbound_vnet[echo_request-with-underlay-route]
+ERROR dash/test_dash_vnet.py::test_outbound_vnet[echo_reply-no-underlay-route]
+ERROR dash/test_dash_vnet.py::test_outbound_vnet[echo_reply-with-underlay-route]
+ERROR dash/test_dash_vnet.py::test_outbound_vnet_direct[udp-no-underlay-route]
+ERROR dash/test_dash_vnet.py::test_outbound_vnet_direct[udp-with-underlay-route]
+ERROR dash/test_dash_vnet.py::test_outbound_vnet_direct[tcp-no-underlay-route]
+ERROR dash/test_dash_vnet.py::test_outbound_vnet_direct[tcp-with-underlay-route]
+ERROR dash/test_dash_vnet.py::test_outbound_vnet_direct[echo_request-no-underlay-route]
+ERROR dash/test_dash_vnet.py::test_outbound_vnet_direct[echo_request-with-underlay-route]
+ERROR dash/test_dash_vnet.py::test_outbound_vnet_direct[echo_reply-no-underlay-route]
+ERROR dash/test_dash_vnet.py::test_outbound_vnet_direct[echo_reply-with-underlay-route]
+ERROR dash/test_dash_vnet.py::test_outbound_direct[udp-no-underlay-route] - K...
+ERROR dash/test_dash_vnet.py::test_outbound_direct[udp-with-underlay-route]
+ERROR dash/test_dash_vnet.py::test_outbound_direct[tcp-no-underlay-route] - K...
+ERROR dash/test_dash_vnet.py::test_outbound_direct[tcp-with-underlay-route]
+ERROR dash/test_dash_vnet.py::test_outbound_direct[echo_request-no-underlay-route]
+ERROR dash/test_dash_vnet.py::test_outbound_direct[echo_request-with-underlay-route]
+ERROR dash/test_dash_vnet.py::test_outbound_direct[echo_reply-no-underlay-route]
+ERROR dash/test_dash_vnet.py::test_outbound_direct[echo_reply-with-underlay-route]
+ERROR dash/test_dash_vnet.py::test_inbound_vnet_pa_validate[udp-no-underlay-route]
+ERROR dash/test_dash_vnet.py::test_inbound_vnet_pa_validate[udp-with-underlay-route]
+ERROR dash/test_dash_vnet.py::test_inbound_vnet_pa_validate[tcp-no-underlay-route]
+ERROR dash/test_dash_vnet.py::test_inbound_vnet_pa_validate[tcp-with-underlay-route]
+ERROR dash/test_dash_vnet.py::test_inbound_vnet_pa_validate[echo_request-no-underlay-route]
+ERROR dash/test_dash_vnet.py::test_inbound_vnet_pa_validate[echo_request-with-underlay-route]
+ERROR dash/test_dash_vnet.py::test_inbound_vnet_pa_validate[echo_reply-no-underlay-route]
+ERROR dash/test_dash_vnet.py::test_inbound_vnet_pa_validate[echo_reply-with-underlay-route]
+================== 1 warning, 32 errors in 288.98s (0:04:48) ===================

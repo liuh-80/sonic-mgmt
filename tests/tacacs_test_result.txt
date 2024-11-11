@@ -1,0 +1,18 @@
+=== Running tests in groups ===
+Running: python3 -m pytest tacacs/test_command_set_config.py --inventory veos_vtb --host-pattern vlab-01 --testbed vms-kvm-t0 --testbed_file vtestbed.csv --log-cli-level warning --log-file-level debug --kube_master unset --showlocals --assert plain --show-capture no -rav --allow_recover --ignore=ptftests --ignore=acstests --ignore=saitests --ignore=scripts --ignore=k8s --ignore=sai_qualify --junit-xml=logs/tr.xml --log-file=logs/test.log
+Using packet manipulation module: ptf.packet_scapy
+============================= test session starts ==============================
+platform linux -- Python 3.8.10, pytest-7.4.0, pluggy-1.5.0
+ansible: 2.13.13
+rootdir: /data/sonic-mgmt/tests
+configfile: pytest.ini
+plugins: metadata-3.1.1, allure-pytest-2.8.22, ansible-4.0.0, xdist-1.28.0, html-4.1.1, forked-1.6.0, repeat-0.9.3
+
+=============================== warnings summary ===============================
+../../../usr/local/lib/python3.8/dist-packages/paramiko/transport.py:236
+  /usr/local/lib/python3.8/dist-packages/paramiko/transport.py:236: CryptographyDeprecationWarning: Blowfish has been deprecated
+    "class": algorithms.Blowfish,
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+------------ generated xml file: /data/sonic-mgmt/tests/logs/tr.xml ------------
+============================== 1 warning in 0.45s ==============================

@@ -27,6 +27,8 @@ def port_toggle(duthost, tbinfo, ports=None, wait_time_getter=None, wait_after_p
         ports_down = duthost.interface_facts(up_ports=ports)["ansible_facts"]["ansible_interface_link_down_ports"]
         db_ports_down = duthost.show_interface(command="status", up_ports=ports)[
             "ansible_facts"]["ansible_interface_link_down_ports"]
+        logger.warning("__get_down_ports ports_down: {}".format(ports_down))
+        logger.warning("__get_down_ports db_ports_down: {}".format(db_ports_down))
         if expect_up:
             return set(ports_down) | set(db_ports_down)
         else:
@@ -72,11 +74,13 @@ def port_toggle(duthost, tbinfo, ports=None, wait_time_getter=None, wait_after_p
 
     startup_ok = False
     startup_err_msg = ""
+    logger.warning("start check port up status")
     try:
         duthost.shell_cmds(cmds=cmds_up)
 
         logger.info("Wait for ports to come up")
         startup_ok = wait_until(port_up_wait_time, 5, 0, lambda: len(__get_down_ports()) == 0)
+        logger.warning("end check port up status")
 
         if not startup_ok:
             down_ports = __get_down_ports()

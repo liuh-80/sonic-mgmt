@@ -1,0 +1,3 @@
+
+[ req_ext ]
+crlDistributionPoints=URI:http://10.250.0.102:1234/crl

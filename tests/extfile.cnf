@@ -1,0 +1,6 @@
+
+[ req_ext ]
+subjectAltName = @alt_names
+[alt_names]
+DNS.1   = hostname.com
+IP      = 10.250.0.101

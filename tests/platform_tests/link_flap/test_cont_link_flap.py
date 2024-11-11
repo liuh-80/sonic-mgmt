@@ -54,8 +54,12 @@ class TestContLinkFlap(object):
             ORCH agent CPU consumption below threshold after 3 mins after stopping flaps.
         """
         duthost = duthosts[enum_rand_one_per_hwsku_frontend_hostname]
-        duthost.command("sonic-clear arp")
         orch_cpu_threshold = request.config.getoption("--orch_cpu_threshold")
+
+        # clear for debug
+        duthost.command("sudo truncate -s 0 /var/log/swss/sairedis.rec")
+        duthost.command("sudo truncate -s 0 /var/log/swss/swss.rec")
+        duthost.command("sudo truncate -s 0 /var/log/syslog")
 
         # Record memory status at start
         memory_output = duthost.shell("show system-memory")["stdout"]

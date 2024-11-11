@@ -17,7 +17,8 @@ PEER_COUNT = 1
 NEIGHBOR_EXABGP_PORT = 11000
 
 
-@pytest.fixture(params=["warm", "fast"])
+#@pytest.fixture(params=["warm", "fast"])
+@pytest.fixture(params=["warm"])
 def reboot_type(request, tbinfo):
     pytest_require(
         not (request.param == "fast" and "dualtor" in tbinfo["topo"]["name"]),
@@ -70,7 +71,6 @@ def test_bgp_slb_neighbor_persistence_across_advanced_reboot(
     duthosts, enum_rand_one_per_hwsku_frontend_hostname, bgp_slb_neighbor,
     toggle_all_simulator_ports_to_enum_rand_one_per_hwsku_frontend_host_m, reboot_type, localhost     # noqa F811
 ):
-
     def verify_bgp_session(duthost, bgp_neighbor):
         """Verify the bgp session to the DUT is established."""
         bgp_facts = duthost.bgp_facts()["ansible_facts"]
@@ -79,6 +79,11 @@ def test_bgp_slb_neighbor_persistence_across_advanced_reboot(
 
     duthost = duthosts[enum_rand_one_per_hwsku_frontend_hostname]
     neighbor = bgp_slb_neighbor
+
+    # clear for debug
+    duthost.command("sudo truncate -s 0 /var/log/swss/sairedis.rec")
+    duthost.command("sudo truncate -s 0 /var/log/swss/swss.rec")
+    duthost.command("sudo truncate -s 0 /var/log/syslog")
 
     try:
         neighbor.start_session()

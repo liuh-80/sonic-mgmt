@@ -1,0 +1,90 @@
+=== Running tests in groups ===
+Running: python3 -m pytest gnmi/test_gnmi.py --inventory veos_vtb --host-pattern vlab-01 --testbed vms-kvm-t0 --testbed_file vtestbed.csv --log-cli-level warning --log-file-level debug --kube_master unset --showlocals --assert plain --show-capture no -rav --allow_recover --ignore=ptftests --ignore=acstests --ignore=saitests --ignore=scripts --ignore=k8s --ignore=sai_qualify --junit-xml=logs/tr.xml --log-file=logs/test.log
+============================= test session starts ==============================
+platform linux -- Python 3.8.10, pytest-7.4.0, pluggy-1.5.0
+ansible: 2.13.13
+rootdir: /data/sonic-mgmt/tests
+configfile: pytest.ini
+plugins: metadata-3.1.1, allure-pytest-2.8.22, ansible-4.0.0, xdist-1.28.0, html-4.1.1, forked-1.6.0, repeat-0.9.3
+['conf-name', 'group-name', 'topo', 'ptf_image_name', 'ptf', 'ptf_ip', 'ptf_ipv6', 'server', 'vm_base', 'dut', 'inv_name', 'auto_recover', 'comment']
+Finished testbed info generating.
+collected 2 items
+
+gnmi/test_gnmi.py::test_gnmi_capabilities PASSED                         [ 50%]
+gnmi/test_gnmi.py::test_gnmi_authorize_failed_with_invalid_cname 
+-------------------------------- live log call ---------------------------------
+08:26:21 __init__.pytest_runtest_call             L0040 ERROR  | Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/_pytest/python.py", line 1788, in runtest
+    self.ihook.pytest_pyfunc_call(pyfuncitem=self)
+  File "/usr/local/lib/python3.8/dist-packages/pluggy/_hooks.py", line 513, in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+  File "/usr/local/lib/python3.8/dist-packages/pluggy/_manager.py", line 120, in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+  File "/usr/local/lib/python3.8/dist-packages/pluggy/_callers.py", line 139, in _multicall
+    raise exception.with_traceback(exception.__traceback__)
+  File "/usr/local/lib/python3.8/dist-packages/pluggy/_callers.py", line 103, in _multicall
+    res = hook_impl.function(*args)
+  File "/usr/local/lib/python3.8/dist-packages/_pytest/python.py", line 194, in pytest_pyfunc_call
+    result = testfunction(**testargs)
+  File "/data/sonic-mgmt/tests/gnmi/test_gnmi.py", line 63, in test_gnmi_authorize_failed_with_invalid_cname
+    assert "Unauthenticated" in msg
+AssertionError
+
+FAILED                                                                   [100%]
+
+=================================== FAILURES ===================================
+________________ test_gnmi_authorize_failed_with_invalid_cname _________________
+
+duthosts = [<MultiAsicSonicHost vlab-01>], rand_one_dut_hostname = 'vlab-01'
+ptfhost = <tests.common.devices.ptf.PTFHost object at 0x7fbd3701d970>
+setup_invalid_client_cert_cname = None
+
+    def test_gnmi_authorize_failed_with_invalid_cname(duthosts,
+                                                      rand_one_dut_hostname,
+                                                      ptfhost,
+                                                      setup_invalid_client_cert_cname):
+        '''
+        Verify GNMI native write, incremental config for configDB
+        GNMI set request with invalid path
+        '''
+        duthost = duthosts[rand_one_dut_hostname]
+    
+        file_name = "vnet.txt"
+        text = "{\"Vnet1\": {\"vni\": \"1000\", \"guid\": \"559c6ce8-26ab-4193-b946-ccc6e8f930b2\"}}"
+        with open(file_name, 'w') as file:
+            file.write(text)
+        ptfhost.copy(src=file_name, dest='/root')
+        # Add DASH_VNET_TABLE
+        update_list = ["/sonic-db:APPL_DB/localhost/DASH_VNET_TABLE:@/root/%s" % (file_name)]
+        msg = ""
+        try:
+            gnmi_set(duthost, ptfhost, [], update_list, [])
+        except Exception as e:
+            logger.info("Failed to set: " + str(e))
+            msg = str(e)
+    
+>       assert "Unauthenticated" in msg
+E       AssertionError
+
+duthost    = <MultiAsicSonicHost vlab-01>
+duthosts   = [<MultiAsicSonicHost vlab-01>]
+file       = <_io.TextIOWrapper name='vnet.txt' mode='w' encoding='UTF-8'>
+file_name  = 'vnet.txt'
+msg        = ''
+ptfhost    = <tests.common.devices.ptf.PTFHost object at 0x7fbd3701d970>
+rand_one_dut_hostname = 'vlab-01'
+setup_invalid_client_cert_cname = None
+text       = '{"Vnet1": {"vni": "1000", "guid": "559c6ce8-26ab-4193-b946-ccc6e8f930b2"}}'
+update_list = ['/sonic-db:APPL_DB/localhost/DASH_VNET_TABLE:@/root/vnet.txt']
+
+gnmi/test_gnmi.py:63: AssertionError
+=============================== warnings summary ===============================
+../../../usr/local/lib/python3.8/dist-packages/paramiko/transport.py:236
+  /usr/local/lib/python3.8/dist-packages/paramiko/transport.py:236: CryptographyDeprecationWarning: Blowfish has been deprecated
+    "class": algorithms.Blowfish,
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+------------ generated xml file: /data/sonic-mgmt/tests/logs/tr.xml ------------
+=========================== short test summary info ============================
+FAILED gnmi/test_gnmi.py::test_gnmi_authorize_failed_with_invalid_cname - Ass...
+============== 1 failed, 1 passed, 1 warning in 174.96s (0:02:54) ==============
