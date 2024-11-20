@@ -5,7 +5,7 @@ import packets
 
 from constants import LOCAL_PTF_INTF, REMOTE_PTF_INTF
 from tests.common.plugins.allure_wrapper import allure_step_wrapper as allure
-from gnmi_utils import apply_gnmi_file
+from gnmi_utils import apply_gnmi_file, GNMIEnvironment
 from dash_utils import render_template_to_host
 from tests.common.utilities import wait_until
 from tests.common.helpers.assertions import pytest_assert
@@ -41,6 +41,11 @@ def test_dash_disable_enable_eni(ptfadapter, localhost, duthost, ptfhost, apply_
         dest_path = f"/tmp/{eni_set_state_config}.json"
         render_template_to_host(template_name, duthost, dest_path, dash_config_info, eni_admin_state=state)
         apply_gnmi_file(localhost, duthost, ptfhost, dest_path)
+        # verify APPL_DB updated by GNMI
+        env = GNMIEnvironment(duthost)
+        if env.enable_zmq:
+            result = duthost.shell("sonic-db-cli CONFIG_DB keys "*" | grep DASH_ENI_TABLE", module_ignore_errors=True)
+            logger.warning("set_eni_admin_state: {}".format(result))
 
     def _check_eni_admin_state(state):
         asic_db_eni_state = duthost.shell(
