@@ -21,6 +21,16 @@ pytestmark = [
 ]
 
 
+@pytest.fixture(autouse=True)
+def ignore_expected_loganalyzer_exceptions(simulated_faulty_side, loganalyzer):
+    """Ignore the pmon error."""
+    error_str = [
+        ".*Could not establish the active side for Y cable port.*"
+    ]
+    if loganalyzer:  # Skip if loganalyzer is disabled
+        loganalyzer[simulated_faulty_side.hostname].ignore_regex.extend(error_str)
+
+
 @pytest.fixture(scope="module")
 def simulated_faulty_side(rand_unselected_dut):
     return rand_unselected_dut
